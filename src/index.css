@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Print optimizations for the diagnostic report */
+@media print {
+  @page {
+    /* Define exact A4 size */
+    size: 210mm 297mm;
+    margin: 10mm; /* Printer-safe margin */
+  }
+
+  /* Force the target container to fill the A4 page */
+  #laboratory-report-sheet {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    /* Ensure no breaks occur inside the card */
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Hide UI elements */
+  .no-print {
+    display: none !important;
+  }
+}
