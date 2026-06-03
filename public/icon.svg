@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f4f5f2" />
+    </radialGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  
+  <!-- Soft Circular Background -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGrad)" />
+  
+  <g filter="url(#shadow)">
+    <!-- Elegant Shield Design -->
+    <path d="M256,80 C320,80 384,64 400,96 C416,144 416,288 256,432 C96,288 96,144 112,96 C128,64 192,80 256,80 Z" fill="url(#shieldGrad)" />
+  </g>
+  
+  <!-- Inner White Shield Line border -->
+  <path d="M256,105 C310,105 360,92 375,118 C388,158 388,270 256,395 C124,270 124,158 137,118 C152,92 202,105 256,105 Z" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+  
+  <!-- Verification Medical Checkmark Emblem -->
+  <g transform="translate(186, 186)" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Medical Cross background -->
+    <path d="M70,20 L70,120" stroke="#ffffff" opacity="0.3" stroke-width="20" />
+    <path d="M20,70 L120,70" stroke="#ffffff" opacity="0.3" stroke-width="20" />
+    
+    <!-- Big verification check -->
+    <path d="M25,75 L55,105 L120,35" stroke="#ffffff" />
+  </g>
+</svg>
