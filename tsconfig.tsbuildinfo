@@ -1,0 +1,1 @@
+{"root":["./vite.config.ts","./dist/sw.js","./dist/assets/index-f6udgp0f.js","./public/sw.js","./src/app.tsx","./src/data.ts","./src/main.tsx","./src/types.ts","./src/vite-env.d.ts","./src/lib/supabaseclient.ts"],"version":"5.8.3"}

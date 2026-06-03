@@ -1,0 +1,6 @@
+{
+  "name": "Lab Verification Report",
+  "description": "Official laboratory verification and diagnostic reporting system for Lab Verification Report.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
