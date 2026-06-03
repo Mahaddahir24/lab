@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=900">
+  <title>Lab Verification</title>
+
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    body{ background:#dfe1e6; padding:12px; }
+    .container{ width:100%; max-width:1000px; margin: 0 auto; }
+    .header{ background:linear-gradient(90deg, #eaf2fd 0%, #ffffff 100%); border-top:none; border-radius:8px; padding:18px 20px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+    
+    /* Logo Size */
+    .logo{ width:100px; height:100px; object-fit:contain; }
+    
+    .header-center{ text-align:center; flex:1; padding:0 15px; }
+    .header-center h1{ color:#0459a8; font-size:24px; font-weight:700; margin-bottom:4px; }
+    .header-center p{ color:#555; font-size:14px; margin-bottom:8px; }
+    .line{ width:70%; height:3px; background:#1b9bc5; margin:0 auto 10px auto; }
+    .info{ font-size:14px; color:#333; line-height:1.8; }
+    .card{ margin-top:22px; background:#f7f7f7; border-radius:12px; border-left:5px solid #3cb54a; padding:28px 30px; box-shadow:0 1px 5px rgba(0,0,0,0.12); }
+    .success{ color:#3d7f36; font-size:22px; font-weight:700; margin-bottom:10px; }
+    .verified{ color:#555; font-size:15px; margin-bottom:18px; }
+    .details{ line-height:2; color:#333; font-size:15px; }
+    .details b{ font-weight:700; }
+    .section-title{ margin-top:26px; background:#0075f2; color:white; padding:10px 14px; border-radius:4px; font-weight:700; font-size:16px; }
+    table{ width:100%; border-collapse:collapse; background:#f7f7f7; margin-top:0; border-radius:0 0 8px 8px; overflow:hidden; box-shadow:0 1px 5px rgba(0,0,0,0.12); }
+    th{ background:#eceff1; text-align:left; padding:14px 10px; color:#333; border:1px solid #ddd; font-size:15px; }
+    td{ padding:14px 10px; border:1px solid #e2e2e2; color:#444; font-size:15px; }
+    .footer-line{ margin-top:34px; border-top:3px solid #1b84d6; padding-top:12px; text-align:center; color:#777; font-size:13px; }
+    
+    /* Highlight only when editing */
+    .edit-field:focus { outline: 2px solid #0075f2; background: #fff; border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="https://i.postimg.cc/mk4PXqw2/logo1.png" class="logo" alt="logo" referrerpolicy="no-referrer">
+      <div class="header-center">
+        <h1>MEDILAB DIAGNOSTIC CENTER</h1>
+        <p>Official Laboratory Verification Report</p>
+        <div class="line"></div>
+        <div class="info">
+          <b>Address:</b> Aden Adde International Airport, Next To Dahabshiil Bank, Waberi, Mogadishu-Somalia<br>
+          <b>Tel:</b> +252 613523011 &nbsp;&nbsp;•&nbsp;&nbsp;
+          <b>Email:</b> m.labsdiagnostic@gmail.com
+        </div>
+      </div>
+      <img src="https://i.postimg.cc/5NN0X8KB/logo2.png" class="logo" alt="logo" referrerpolicy="no-referrer">
+    </div>
+
+    <div class="card">
+      <div class="success">✅ Patient waa sax wuxuuna ka yimid Medilab Diagnostic System</div>
+      <div class="verified">✔ This report is authentic and verified by Medilab Diagnostic.</div>
+      <div class="details">
+        <b>Patient ID:</b> <span id="p-id" class="edit-field" contenteditable="false">1876</span><br>
+        <b>Patient Name:</b> <span id="p-name" class="edit-field" contenteditable="false">MYKOLA VORONA</span><br>
+        <b>Age:</b> <span id="p-age" class="edit-field" contenteditable="false">44</span> | <b>Gender:</b> <span id="p-gender" class="edit-field" contenteditable="false">Male</span><br>
+        <b>Company:</b> <span id="p-company" class="edit-field" contenteditable="false">UKRANIAN HELICOPTERS</span> | <b>Passport No:</b> <span id="p-passport" class="edit-field" contenteditable="false">FS879183</span><br>
+        <b>Phone:</b> <span id="p-phone" class="edit-field" contenteditable="false">839180</span> | <b>Doctor:</b> <span id="p-doctor" class="edit-field" contenteditable="false">sadam adan Ahmed</span><br>
+        <b>Result Date:</b> <span id="p-date" class="edit-field" contenteditable="false">03 Jun 2026</span>
+      </div>
+    </div>
+
+    <div class="section-title">Immunology</div>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th><th>Unit</th><th>Remark</th></tr></thead>
+      <tbody>
+        <tr><td>HCV</td><td id="val-hcv" class="edit-field" contenteditable="false">Negative</td><td>test</td><td></td></tr>
+        <tr><td>Hepatitis B Surface Antigen</td><td id="val-hepb" class="edit-field" contenteditable="false">Negative</td><td>test</td><td></td></tr>
+        <tr><td>HIV Test</td><td id="val-hiv" class="edit-field" contenteditable="false">Negative</td><td>test</td><td></td></tr>
+        <tr><td>TPHA</td><td id="val-tpha" class="edit-field" contenteditable="false">Negative</td><td>test</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="footer-line">
+      © 2026 Medilab Diagnostic Center — All rights reserved.<br>
+      Designed & Verified by Daryeel Tech IT Team
+    </div>
+  </div>
+
+  <script>
+    const fieldMapping = {
+      'p-id': 'id',
+      'p-name': 'name',
+      'p-age': 'age',
+      'p-gender': 'gender',
+      'p-company': 'company',
+      'p-passport': 'passport',
+      'p-phone': 'phone',
+      'p-doctor': 'doctor',
+      'p-date': 'date',
+      'val-hcv': 'hcv',
+      'val-hepb': 'hepb',
+      'val-hiv': 'hiv',
+      'val-tpha': 'tpha'
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    
+    function formatVerDate(dateStr) {
+      if (!dateStr) return "";
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      
+      const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (match) {
+        const year = parseInt(match[1], 10);
+        const monthIndex = parseInt(match[2], 10) - 1;
+        const day = match[3].padStart(2, '0');
+        if (monthIndex >= 0 && monthIndex < 12) {
+          return `${day} ${months[monthIndex]} ${year}`;
+        }
+      }
+
+      const formattedMatch = dateStr.match(/^(\d{1,2})\s+([a-zA-Z]{3})\s+(\d{4})$/);
+      if (formattedMatch) {
+        const day = formattedMatch[1].padStart(2, '0');
+        const rawMonth = formattedMatch[2].toLowerCase();
+        const monthIndex = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].indexOf(rawMonth);
+        const month = monthIndex !== -1 ? months[monthIndex] : (rawMonth.charAt(0).toUpperCase() + rawMonth.slice(1));
+        const year = formattedMatch[3];
+        return `${day} ${month} ${year}`;
+      }
+
+      const dateObj = new Date(dateStr);
+      if (isNaN(dateObj.getTime())) {
+        return dateStr;
+      }
+      const day = String(dateObj.getUTCDate()).padStart(2, "0");
+      const month = months[dateObj.getUTCMonth()];
+      const year = dateObj.getUTCFullYear();
+      return `${day} ${month} ${year}`;
+    }
+
+    Object.keys(fieldMapping).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const paramName = fieldMapping[id];
+        const paramVal = params.get(paramName);
+        if (paramVal && paramVal !== "undefined" && paramVal !== "null") {
+          let val = decodeURIComponent(paramVal);
+          if (paramName === 'date') {
+            val = formatVerDate(val);
+          }
+          el.innerHTML = val;
+        } else {
+          // Fallback to localStorage if any saved data
+          const savedData = localStorage.getItem('patient_field_' + id);
+          if (savedData) {
+            let val = savedData;
+            if (paramName === 'date') {
+              val = formatVerDate(val);
+            }
+            el.innerHTML = val;
+          } else if (id.startsWith('val-')) {
+            el.innerHTML = "Negative";
+          } else if (paramName === 'date') {
+            el.innerHTML = formatVerDate(new Date().toISOString().split("T")[0]);
+          }
+        }
+
+        // Save on input so manual user edits persist locally as requested
+        el.addEventListener('input', () => {
+          localStorage.setItem('patient_field_' + id, el.innerHTML);
+        });
+      }
+    });
+
+    // Check verification status from URL query parameter
+    const verifiedParam = params.get('verified');
+    if (verifiedParam === 'false') {
+      const cardEl = document.querySelector('.card');
+      const successEl = document.querySelector('.success');
+      const verifiedEl = document.querySelector('.verified');
+      if (cardEl) {
+        cardEl.style.borderLeft = '5px solid #ef4444';
+        cardEl.style.background = '#fef2f2';
+        cardEl.style.boxShadow = '0 2px 8px rgba(239, 68, 68, 0.1)';
+      }
+      if (successEl) {
+        successEl.innerHTML = '⚠️ Digniin: Warbixintan waa la hakinay / la laalay!';
+        successEl.style.color = '#dc2626';
+      }
+      if (verifiedEl) {
+        verifiedEl.innerHTML = '❌ Warning: This clearance report is suspended or cancelled in the system.';
+        verifiedEl.style.color = '#991b1b';
+      }
+
+      // Mark bio-assay results as rejected and invalid
+      ['val-hcv', 'val-hepb', 'val-hiv', 'val-tpha'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.innerHTML = '<span style="color: #dc2626; font-weight: bold;">REJECTED</span>';
+          const row = el.closest('tr');
+          if (row) {
+            const cells = row.querySelectorAll('td');
+            if (cells.length === 4) {
+              cells[3].innerHTML = '<span style="color: #dc2626; font-weight: bold; font-size: 11px; text-transform: uppercase;">Invalid Checksum</span>';
+            }
+          }
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
